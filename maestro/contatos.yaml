@@ -1,0 +1,26 @@
+appId: com.zenixcode.aurea.plantao
+---
+- tapOn: "Contatos.*"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Pedidos de contato"
+    timeout: 8000
+- takeScreenshot: maestro/shots/20-contatos
+- tapOn:
+    text: ".*Paciente Um.*"
+    index: 0
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Marcar como atendido"
+    timeout: 8000
+- takeScreenshot: maestro/shots/21-atender
+- tapOn: "Marcar como atendido"
+- waitForAnimationToEnd
+- takeScreenshot: maestro/shots/22-depois
+- tapOn: "Pacientes"
+- waitForAnimationToEnd
+- takeScreenshot: maestro/shots/30-pacientes
+- tapOn: "Plantão"
+- tapOn: "Sua conta"
+- waitForAnimationToEnd
+- takeScreenshot: maestro/shots/40-conta

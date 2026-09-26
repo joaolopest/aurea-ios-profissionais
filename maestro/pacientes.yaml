@@ -1,0 +1,12 @@
+appId: com.zenixcode.aurea.plantao
+---
+- tapOn: "Pacientes"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: ".*em acompanhamento.*"
+    timeout: 8000
+- takeScreenshot: maestro/shots/30-pacientes
+- tapOn: "Nome, diagnóstico ou responsável"
+- inputText: "pulm"
+- waitForAnimationToEnd
+- takeScreenshot: maestro/shots/31-busca

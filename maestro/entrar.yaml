@@ -1,0 +1,27 @@
+appId: com.zenixcode.aurea.plantao
+---
+- launchApp:
+    clearState: true
+- tapOn: "E-mail"
+- tapOn:
+    below: "E-mail"
+    index: 0
+- inputText: "enfermagem@aurea.local"
+- tapOn:
+    below: "Senha"
+    index: 0
+- inputText: "aurea-demo-2026"
+- pressKey: Enter
+- tapOn:
+    text: "Agora Não"
+    optional: true
+- extendedWaitUntil:
+    visible: "Primeiro acesso"
+    timeout: 8000
+- takeScreenshot: maestro/shots/02-primeiro-acesso
+- tapOn: "Pular — só na demonstração"
+- extendedWaitUntil:
+    visible: "Precisam de você agora"
+    timeout: 8000
+- waitForAnimationToEnd
+- takeScreenshot: maestro/shots/03-plantao

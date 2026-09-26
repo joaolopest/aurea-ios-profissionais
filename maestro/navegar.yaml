@@ -1,0 +1,12 @@
+appId: com.zenixcode.aurea.plantao
+---
+- tapOn: "Paciente Um.*Vermelho.*"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Último check-in"
+    timeout: 8000
+- takeScreenshot: maestro/shots/10-prontuario
+- scroll
+- takeScreenshot: maestro/shots/11-prontuario-2
+- scroll
+- takeScreenshot: maestro/shots/12-prontuario-3

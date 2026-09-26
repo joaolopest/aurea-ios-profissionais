@@ -1,0 +1,2 @@
+// A barra dupla é escapada: xcconfig trata // como comentário.
+ENDERECO_DA_API = http:/$()/localhost:3333

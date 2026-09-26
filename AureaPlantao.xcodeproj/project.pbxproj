@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06C14CCAE43C370CC0A2A138 /* IBMPlexMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F17F2CE85C36C331374A6CC /* IBMPlexMono-SemiBold.ttf */; };
+		1ECD94C5366E919D3D2652F5 /* Carga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE5B7384D0EF9D76609531 /* Carga.swift */; };
+		290958A40A95AB5AF3F79AED /* OFL-PlusJakartaSans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6CA47132F0D398D6418FB311 /* OFL-PlusJakartaSans.txt */; };
+		2C5126886988E81D3044A128 /* ContatosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6D379CD7814E60FF021B /* ContatosView.swift */; };
+		3366616B19D70B13B45CAAB6 /* IBMPlexMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B2729C36EB569B7DEE9A0A /* IBMPlexMono-Medium.ttf */; };
+		338E9740F524A0DE633364D7 /* FundoVivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6881E741877A60231EBD439 /* FundoVivo.swift */; };
+		437CBFBF48D9768391758439 /* Pacientes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EBB2D84700750C4B38ACB9 /* Pacientes.swift */; };
+		4D485D7B4A24BB38D5826BA2 /* PlantaoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1272A39F7303AC6F212D70 /* PlantaoStore.swift */; };
+		50F22DA495DD8658D12C161B /* ProntuarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1796A002A642F6F769FB1B2 /* ProntuarioView.swift */; };
+		5A3DFB4E77DF56AEE15FA7FB /* AureaPlantaoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA93CE15354D7619BD40768 /* AureaPlantaoApp.swift */; };
+		5B502C55A0F8577835D6C7D8 /* OFL-IBMPlexMono.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A6348CBBA981DEFBC2C0D46 /* OFL-IBMPlexMono.txt */; };
+		5BFF6903CC52EA6DDDCE0DA7 /* PacientesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F914026F863CC48045897 /* PacientesView.swift */; };
+		5D9F82EAD5F773C1FDEED063 /* Movimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B928ADFFC1B4F34630915A8E /* Movimento.swift */; };
+		65469FFD01A3D938DEF8223A /* GuardaDeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690E63E620CA86AEE048685 /* GuardaDeToken.swift */; };
+		673A193477A45868383B9ACF /* PlusJakartaSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69D09B3F8A338FED9EF3E4E9 /* PlusJakartaSans.ttf */; };
+		6BBFB1E556418A1C45AEAE14 /* PlantaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82266CDC78D9D12853F777 /* PlantaoView.swift */; };
+		6CE2300536BD42693177DD96 /* Sessao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7957F6FBAF9E7776D8B17F04 /* Sessao.swift */; };
+		720A89C089228EE64E32F4CE /* EntradaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F90A82AD923EFC427E4EA7 /* EntradaView.swift */; };
+		7DF497FDC01E782B8AA55323 /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A92406C9ADD7BA2B1CE3B /* Cores.swift */; };
+		87557B1493C76D24405947D2 /* Clinico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788815ACF4F719B4689854C7 /* Clinico.swift */; };
+		95379D64527126F292B8B1E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7A4B98C8F0938844D256E /* Assets.xcassets */; };
+		9C871A3D77DFE50C30A95A9C /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE1764BF3E2E3FA1F6829 /* Material.swift */; };
+		9E38AAC2B46BCEF9FE6303C2 /* ProtecaoDeCaptura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D48803EC0A38016CB4B859F /* ProtecaoDeCaptura.swift */; };
+		A42D8E8ACB50FD4A77B5E6EE /* Contatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EC02F42F7EC693351253A /* Contatos.swift */; };
+		A890ECC0F547ADEA1220B91A /* ClienteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C143160885B32E973F48C /* ClienteAPI.swift */; };
+		AA2DD248169F1318E630AE35 /* IBMPlexMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 951C68FB3F730783A53A13DE /* IBMPlexMono-Regular.ttf */; };
+		B1DFA25EE94ABB7A6ECE20D4 /* ContaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63108187DB6067BF971381AF /* ContaView.swift */; };
+		D4B6EBB1E6204DF3EA36FCF7 /* Plantao.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A72E78F152242BA4CCE8CF /* Plantao.swift */; };
+		DE82EDB786FA5FE5992D1DFC /* Tipografia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F5C56F752657B0D176D5A /* Tipografia.swift */; };
+		F1B627C2E9594511C207069B /* Componentes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFF9F0D2D2AB528B3352786 /* Componentes.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F82266CDC78D9D12853F777 /* PlantaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantaoView.swift; sourceTree = "<group>"; };
+		151EC02F42F7EC693351253A /* Contatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contatos.swift; sourceTree = "<group>"; };
+		17CCE35940D346BFAADAD095 /* AureaPlantao.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AureaPlantao.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		183E6D379CD7814E60FF021B /* ContatosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatosView.swift; sourceTree = "<group>"; };
+		1C5C143160885B32E973F48C /* ClienteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteAPI.swift; sourceTree = "<group>"; };
+		283F914026F863CC48045897 /* PacientesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacientesView.swift; sourceTree = "<group>"; };
+		3A1272A39F7303AC6F212D70 /* PlantaoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantaoStore.swift; sourceTree = "<group>"; };
+		44B2729C36EB569B7DEE9A0A /* IBMPlexMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Medium.ttf"; sourceTree = "<group>"; };
+		4BB7188C88ED49577EC443D3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		5A6348CBBA981DEFBC2C0D46 /* OFL-IBMPlexMono.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-IBMPlexMono.txt"; sourceTree = "<group>"; };
+		63108187DB6067BF971381AF /* ContaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaView.swift; sourceTree = "<group>"; };
+		69D09B3F8A338FED9EF3E4E9 /* PlusJakartaSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlusJakartaSans.ttf; sourceTree = "<group>"; };
+		6A4FE1764BF3E2E3FA1F6829 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		6CA47132F0D398D6418FB311 /* OFL-PlusJakartaSans.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-PlusJakartaSans.txt"; sourceTree = "<group>"; };
+		6DC7A4B98C8F0938844D256E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		788815ACF4F719B4689854C7 /* Clinico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clinico.swift; sourceTree = "<group>"; };
+		7957F6FBAF9E7776D8B17F04 /* Sessao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessao.swift; sourceTree = "<group>"; };
+		7DFF9F0D2D2AB528B3352786 /* Componentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Componentes.swift; sourceTree = "<group>"; };
+		7F17F2CE85C36C331374A6CC /* IBMPlexMono-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-SemiBold.ttf"; sourceTree = "<group>"; };
+		7F5F5C56F752657B0D176D5A /* Tipografia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tipografia.swift; sourceTree = "<group>"; };
+		84BE5B7384D0EF9D76609531 /* Carga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carga.swift; sourceTree = "<group>"; };
+		916A92406C9ADD7BA2B1CE3B /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
+		951C68FB3F730783A53A13DE /* IBMPlexMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexMono-Regular.ttf"; sourceTree = "<group>"; };
+		9D48803EC0A38016CB4B859F /* ProtecaoDeCaptura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtecaoDeCaptura.swift; sourceTree = "<group>"; };
+		A1796A002A642F6F769FB1B2 /* ProntuarioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntuarioView.swift; sourceTree = "<group>"; };
+		B1B5588256AAFED079AD392A /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		B3EBB2D84700750C4B38ACB9 /* Pacientes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pacientes.swift; sourceTree = "<group>"; };
+		B4F90A82AD923EFC427E4EA7 /* EntradaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntradaView.swift; sourceTree = "<group>"; };
+		B690E63E620CA86AEE048685 /* GuardaDeToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardaDeToken.swift; sourceTree = "<group>"; };
+		B928ADFFC1B4F34630915A8E /* Movimento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movimento.swift; sourceTree = "<group>"; };
+		C6881E741877A60231EBD439 /* FundoVivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundoVivo.swift; sourceTree = "<group>"; };
+		EDA93CE15354D7619BD40768 /* AureaPlantaoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AureaPlantaoApp.swift; sourceTree = "<group>"; };
+		F0A72E78F152242BA4CCE8CF /* Plantao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plantao.swift; sourceTree = "<group>"; };
+		F9DA64EC7C6D8B79DCFFEA5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1E2C77A10F32E889BBE2C491 /* Plantao */ = {
+			isa = PBXGroup;
+			children = (
+				3A1272A39F7303AC6F212D70 /* PlantaoStore.swift */,
+				0F82266CDC78D9D12853F777 /* PlantaoView.swift */,
+			);
+			path = Plantao;
+			sourceTree = "<group>";
+		};
+		2317BC792A235EAA7F56909E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B1B5588256AAFED079AD392A /* Debug.xcconfig */,
+				4BB7188C88ED49577EC443D3 /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		3B9C04BB650464FCD7519A77 /* Contatos */ = {
+			isa = PBXGroup;
+			children = (
+				183E6D379CD7814E60FF021B /* ContatosView.swift */,
+			);
+			path = Contatos;
+			sourceTree = "<group>";
+		};
+		425C1FF491C42E1DA47CCFC8 /* Seguranca */ = {
+			isa = PBXGroup;
+			children = (
+				B690E63E620CA86AEE048685 /* GuardaDeToken.swift */,
+				9D48803EC0A38016CB4B859F /* ProtecaoDeCaptura.swift */,
+				7957F6FBAF9E7776D8B17F04 /* Sessao.swift */,
+			);
+			path = Seguranca;
+			sourceTree = "<group>";
+		};
+		4BD7D16E16C1CE712DD0B898 /* Funcoes */ = {
+			isa = PBXGroup;
+			children = (
+				94B34B37EF83B5AB379BE6A9 /* Conta */,
+				3B9C04BB650464FCD7519A77 /* Contatos */,
+				6C6F8ABE5EEA1E4C91FBA9CB /* Entrada */,
+				E1B2C721D12FC01C7A1C5DB1 /* Pacientes */,
+				1E2C77A10F32E889BBE2C491 /* Plantao */,
+				D0FB69F7EA8430BA7D5BDE3C /* Prontuario */,
+			);
+			path = Funcoes;
+			sourceTree = "<group>";
+		};
+		5354A527C5C4CBEB97C13757 /* Sistema */ = {
+			isa = PBXGroup;
+			children = (
+				916A92406C9ADD7BA2B1CE3B /* Cores.swift */,
+				C6881E741877A60231EBD439 /* FundoVivo.swift */,
+				6A4FE1764BF3E2E3FA1F6829 /* Material.swift */,
+				B928ADFFC1B4F34630915A8E /* Movimento.swift */,
+				7F5F5C56F752657B0D176D5A /* Tipografia.swift */,
+				6E646686D0885C0FBD3241A8 /* Componentes */,
+			);
+			path = Sistema;
+			sourceTree = "<group>";
+		};
+		56F25E2F391895EE1AFD09C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17CCE35940D346BFAADAD095 /* AureaPlantao.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AD4409D7A9EA9142878503F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EDA93CE15354D7619BD40768 /* AureaPlantaoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6C6F8ABE5EEA1E4C91FBA9CB /* Entrada */ = {
+			isa = PBXGroup;
+			children = (
+				B4F90A82AD923EFC427E4EA7 /* EntradaView.swift */,
+			);
+			path = Entrada;
+			sourceTree = "<group>";
+		};
+		6E646686D0885C0FBD3241A8 /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				7DFF9F0D2D2AB528B3352786 /* Componentes.swift */,
+			);
+			path = Componentes;
+			sourceTree = "<group>";
+		};
+		73B699917F9A71E38BA084A0 /* AureaPlantao */ = {
+			isa = PBXGroup;
+			children = (
+				F9DA64EC7C6D8B79DCFFEA5A /* Info.plist */,
+				5AD4409D7A9EA9142878503F /* App */,
+				DD8F6A7029251B433FCE99EA /* Dados */,
+				4BD7D16E16C1CE712DD0B898 /* Funcoes */,
+				DEFFBA1DD7BD04DCB2E9E10E /* Resources */,
+				425C1FF491C42E1DA47CCFC8 /* Seguranca */,
+				5354A527C5C4CBEB97C13757 /* Sistema */,
+			);
+			path = AureaPlantao;
+			sourceTree = "<group>";
+		};
+		79DF4AF578DCECCE6B765B3A /* Fontes */ = {
+			isa = PBXGroup;
+			children = (
+				44B2729C36EB569B7DEE9A0A /* IBMPlexMono-Medium.ttf */,
+				951C68FB3F730783A53A13DE /* IBMPlexMono-Regular.ttf */,
+				7F17F2CE85C36C331374A6CC /* IBMPlexMono-SemiBold.ttf */,
+				5A6348CBBA981DEFBC2C0D46 /* OFL-IBMPlexMono.txt */,
+				6CA47132F0D398D6418FB311 /* OFL-PlusJakartaSans.txt */,
+				69D09B3F8A338FED9EF3E4E9 /* PlusJakartaSans.ttf */,
+			);
+			path = Fontes;
+			sourceTree = "<group>";
+		};
+		7D7836F4ED9C9D6DCF40F7A5 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				788815ACF4F719B4689854C7 /* Clinico.swift */,
+				151EC02F42F7EC693351253A /* Contatos.swift */,
+				B3EBB2D84700750C4B38ACB9 /* Pacientes.swift */,
+				F0A72E78F152242BA4CCE8CF /* Plantao.swift */,
+			);
+			path = Modelos;
+			sourceTree = "<group>";
+		};
+		94B34B37EF83B5AB379BE6A9 /* Conta */ = {
+			isa = PBXGroup;
+			children = (
+				63108187DB6067BF971381AF /* ContaView.swift */,
+			);
+			path = Conta;
+			sourceTree = "<group>";
+		};
+		D0FB69F7EA8430BA7D5BDE3C /* Prontuario */ = {
+			isa = PBXGroup;
+			children = (
+				A1796A002A642F6F769FB1B2 /* ProntuarioView.swift */,
+			);
+			path = Prontuario;
+			sourceTree = "<group>";
+		};
+		DCB5F18F1A6D352777F8389E = {
+			isa = PBXGroup;
+			children = (
+				73B699917F9A71E38BA084A0 /* AureaPlantao */,
+				2317BC792A235EAA7F56909E /* Config */,
+				56F25E2F391895EE1AFD09C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD8F6A7029251B433FCE99EA /* Dados */ = {
+			isa = PBXGroup;
+			children = (
+				84BE5B7384D0EF9D76609531 /* Carga.swift */,
+				1C5C143160885B32E973F48C /* ClienteAPI.swift */,
+				7D7836F4ED9C9D6DCF40F7A5 /* Modelos */,
+			);
+			path = Dados;
+			sourceTree = "<group>";
+		};
+		DEFFBA1DD7BD04DCB2E9E10E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6DC7A4B98C8F0938844D256E /* Assets.xcassets */,
+				79DF4AF578DCECCE6B765B3A /* Fontes */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1B2C721D12FC01C7A1C5DB1 /* Pacientes */ = {
+			isa = PBXGroup;
+			children = (
+				283F914026F863CC48045897 /* PacientesView.swift */,
+			);
+			path = Pacientes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1C7720D93ABC2A0EA87681A /* AureaPlantao */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37A78D55A4C755B4EE0F2EEB /* Build configuration list for PBXNativeTarget "AureaPlantao" */;
+			buildPhases = (
+				356965F13AC48F0AACE92D6E /* Sources */,
+				28D638EF61C8485CE7095BF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AureaPlantao;
+			packageProductDependencies = (
+			);
+			productName = AureaPlantao;
+			productReference = 17CCE35940D346BFAADAD095 /* AureaPlantao.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F44D141B54613741040B0A8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					E1C7720D93ABC2A0EA87681A = {
+						DevelopmentTeam = F5LL752895;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 26037F71E860D8D6B59C9202 /* Build configuration list for PBXProject "AureaPlantao" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = DCB5F18F1A6D352777F8389E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 56F25E2F391895EE1AFD09C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1C7720D93ABC2A0EA87681A /* AureaPlantao */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28D638EF61C8485CE7095BF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95379D64527126F292B8B1E5 /* Assets.xcassets in Resources */,
+				3366616B19D70B13B45CAAB6 /* IBMPlexMono-Medium.ttf in Resources */,
+				AA2DD248169F1318E630AE35 /* IBMPlexMono-Regular.ttf in Resources */,
+				06C14CCAE43C370CC0A2A138 /* IBMPlexMono-SemiBold.ttf in Resources */,
+				5B502C55A0F8577835D6C7D8 /* OFL-IBMPlexMono.txt in Resources */,
+				290958A40A95AB5AF3F79AED /* OFL-PlusJakartaSans.txt in Resources */,
+				673A193477A45868383B9ACF /* PlusJakartaSans.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		356965F13AC48F0AACE92D6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A3DFB4E77DF56AEE15FA7FB /* AureaPlantaoApp.swift in Sources */,
+				1ECD94C5366E919D3D2652F5 /* Carga.swift in Sources */,
+				A890ECC0F547ADEA1220B91A /* ClienteAPI.swift in Sources */,
+				87557B1493C76D24405947D2 /* Clinico.swift in Sources */,
+				F1B627C2E9594511C207069B /* Componentes.swift in Sources */,
+				B1DFA25EE94ABB7A6ECE20D4 /* ContaView.swift in Sources */,
+				A42D8E8ACB50FD4A77B5E6EE /* Contatos.swift in Sources */,
+				2C5126886988E81D3044A128 /* ContatosView.swift in Sources */,
+				7DF497FDC01E782B8AA55323 /* Cores.swift in Sources */,
+				720A89C089228EE64E32F4CE /* EntradaView.swift in Sources */,
+				338E9740F524A0DE633364D7 /* FundoVivo.swift in Sources */,
+				65469FFD01A3D938DEF8223A /* GuardaDeToken.swift in Sources */,
+				9C871A3D77DFE50C30A95A9C /* Material.swift in Sources */,
+				5D9F82EAD5F773C1FDEED063 /* Movimento.swift in Sources */,
+				437CBFBF48D9768391758439 /* Pacientes.swift in Sources */,
+				5BFF6903CC52EA6DDDCE0DA7 /* PacientesView.swift in Sources */,
+				D4B6EBB1E6204DF3EA36FCF7 /* Plantao.swift in Sources */,
+				4D485D7B4A24BB38D5826BA2 /* PlantaoStore.swift in Sources */,
+				6BBFB1E556418A1C45AEAE14 /* PlantaoView.swift in Sources */,
+				50F22DA495DD8658D12C161B /* ProntuarioView.swift in Sources */,
+				9E38AAC2B46BCEF9FE6303C2 /* ProtecaoDeCaptura.swift in Sources */,
+				6CE2300536BD42693177DD96 /* Sessao.swift in Sources */,
+				DE82EDB786FA5FE5992D1DFC /* Tipografia.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2DC953588152FF942AE9F90B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = F5LL752895;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		66139D1EDFF3A3640266782C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = F5LL752895;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		80A8D897412FEB4B77944003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BB7188C88ED49577EC443D3 /* Release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AureaPlantao/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zenixcode.aurea.plantao;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A33718DCC81DCB206709A43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1B5588256AAFED079AD392A /* Debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AureaPlantao/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zenixcode.aurea.plantao;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26037F71E860D8D6B59C9202 /* Build configuration list for PBXProject "AureaPlantao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC953588152FF942AE9F90B /* Debug */,
+				66139D1EDFF3A3640266782C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		37A78D55A4C755B4EE0F2EEB /* Build configuration list for PBXNativeTarget "AureaPlantao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A33718DCC81DCB206709A43 /* Debug */,
+				80A8D897412FEB4B77944003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F44D141B54613741040B0A8B /* Project object */;
+}

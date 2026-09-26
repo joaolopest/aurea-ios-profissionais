@@ -1,0 +1,6 @@
+appId: com.zenixcode.aurea.plantao
+---
+- tapOn:
+    point: "87%,92%"
+- waitForAnimationToEnd
+- takeScreenshot: maestro/shots/32-aba

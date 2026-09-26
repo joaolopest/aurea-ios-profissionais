@@ -1,0 +1,63 @@
+name: AureaPlantao
+options:
+  bundleIdPrefix: com.zenixcode
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: F5LL752895
+    GENERATE_INFOPLIST_FILE: NO
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    TARGETED_DEVICE_FAMILY: "1"
+configs:
+  Debug: debug
+  Release: release
+targets:
+  AureaPlantao:
+    type: application
+    platform: iOS
+    sources:
+      - path: AureaPlantao
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
+    info:
+      path: AureaPlantao/Info.plist
+      properties:
+        CFBundleDisplayName: AUREA
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen:
+          UIColorName: FundoDoSistema
+        # Modo claro travado — decisão do briefing (P4). O app não segue o escuro do sistema.
+        UIUserInterfaceStyle: Light
+        ITSAppUsesNonExemptEncryption: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSFaceIDUsageDescription: O AUREA pede o Face ID para abrir, porque mostra dado de saúde de pacientes.
+        UIAppFonts:
+          - PlusJakartaSans.ttf
+          - IBMPlexMono-Regular.ttf
+          - IBMPlexMono-Medium.ttf
+          - IBMPlexMono-SemiBold.ttf
+        # Só a API local de desenvolvimento fala HTTP. Produção é HTTPS.
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        EnderecoDaAPI: $(ENDERECO_DA_API)
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zenixcode.aurea.plantao
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+schemes:
+  AureaPlantao:
+    build:
+      targets:
+        AureaPlantao: all
+    run:
+      config: Debug
