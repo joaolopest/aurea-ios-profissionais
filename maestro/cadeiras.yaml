@@ -1,0 +1,20 @@
+appId: com.zenixcode.aurea.plantao
+---
+- tapOn:
+    point: "87%,92%"
+- waitForAnimationToEnd
+- takeScreenshot: maestro/shots/40-mais
+- tapOn: "Cadeiras.*"
+- extendedWaitUntil:
+    visible: "Taxa de ocupação.*"
+    timeout: 15000
+- waitForAnimationToEnd
+- takeScreenshot: maestro/shots/41-cadeiras-topo
+- scroll
+- takeScreenshot: maestro/shots/42-cadeiras-grade
+- scroll
+- takeScreenshot: maestro/shots/43-cadeiras-linha
+- scroll
+- takeScreenshot: maestro/shots/44-cadeiras-agenda
+- scroll
+- takeScreenshot: maestro/shots/45-cadeiras-janelas

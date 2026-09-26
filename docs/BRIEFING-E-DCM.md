@@ -31,3 +31,24 @@ Aprovado pelo João em 25/09/2026. Fonte do produto: `aurea/docs/BRIEFING-MOBILE
 - **Faixa "Ao vivo"** acima das abas (o lugar do clima no BT). Para ser verdade, a fila e os pedidos atualizam sozinhos a cada 60 s com o app na frente.
 - **Cartão de destaque** com brilho no canto (resumo de Contatos); **entrada escalonada** nas listas; **pressionar com haptic** no próprio `ButtonStyle`.
 - **Face ID DESLIGADO** a pedido do João: entra só com e-mail e senha, como o web. Código da tranca intacto atrás de `Sessao.trancaBiometricaLigada`. ⚠️ Volta à mesa com o parecer do Comitê de Ética.
+
+## Revisão 2 — app completo, todos os perfis (26/09/2026, pedido do João)
+
+- **Acesso por permissão, não por profissão** (`App/Destinos.swift`): cada destino espelha o
+  `exigirPermissao` da rota. Enfermagem: Plantão · Contatos · Pacientes · Mais (Condutas,
+  Cadeiras, Toxicidade, Navegação). Médico e farmacêutico (só VER_HISTORICO): Plantão ·
+  Pacientes · Mais, sem Contatos/Cadeiras e sem nenhum botão de registro no prontuário.
+  Administrador: Início · Algoritmo · Cadastros · Mais (Orientações, Protocolos, Medicamentos,
+  Equipe, Acessos; Pesquisa para quem exporta).
+- **Paridade com o web**: registro do plantão (barreira, pendência, internação, contexto
+  social, conduta), condutas, giro de cadeiras, toxicidade, navegação; admin inteiro
+  (algoritmo com diferença/novo/publicar/validar, cadastros de paciente, tratamento, ciclo,
+  prescrição, protocolo, medicamento, equipe e permissões, registro de acessos, pesquisa).
+- **Onde o app NÃO copia o web, de propósito**: não pede o texto do atendimento (a API
+  descarta); orientações só leitura (a escrita vai para um rascunho que nada lê nem publica);
+  sem campos de dose/via/fim na prescrição (a API não tem); datas civis lidas em UTC (o web
+  mostrava um dia a menos). Defeitos 1–26 mandados ao MAESTRO com curl.
+- **Farmacêutico**: função pedida ao Prumo; permissão decidida pelo João = só
+  VER_HISTORICO_DE_PACIENTE. O app não precisa mudar.
+- Construção: base e integração por mim; telas portadas por 6 agentes em cópias isoladas,
+  seguindo `docs/COMO-CONSTRUIR-TELA.md`.

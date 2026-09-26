@@ -65,6 +65,16 @@ final class ClienteAPI: Sendable {
         let _: Vazio = try await chamar(caminho, metodo: "POST", consulta: [], corpo: corpo)
     }
 
+    /// PATCH — edição parcial (contexto social, cadastro, ciclo, encerrar tratamento…).
+    func atualizar<T: Decodable & Sendable, C: Encodable & Sendable>(_ caminho: String, corpo: C) async throws -> T {
+        try await chamar(caminho, metodo: "PATCH", consulta: [], corpo: corpo)
+    }
+
+    /// DELETE — remove contato, alergia, comorbidade, evento de agenda.
+    func remover(_ caminho: String) async throws {
+        let _: Vazio = try await chamar(caminho, metodo: "DELETE", consulta: [], corpo: Optional<Vazio>.none)
+    }
+
     private func chamar<T: Decodable & Sendable, C: Encodable & Sendable>(
         _ caminho: String, metodo: String, consulta: [URLQueryItem], corpo: C?
     ) async throws -> T {
@@ -116,9 +126,10 @@ final class ClienteAPI: Sendable {
     }
 
     private static func mensagem(em dados: Data) -> String? {
-        struct Corpo: Decodable { let message: String?; let mensagem: String? }
+        // A API do AUREA manda `{"erro": "…"}` (erros.ts); `message` é o formato cru do Fastify.
+        struct Corpo: Decodable { let erro: String?; let mensagem: String?; let message: String? }
         guard let c = try? JSONDecoder().decode(Corpo.self, from: dados) else { return nil }
-        return c.mensagem ?? c.message
+        return c.erro ?? c.mensagem ?? c.message
     }
 
     /// Datas da API: ISO 8601 com milissegundos (`2026-09-25T20:46:03.324Z`).

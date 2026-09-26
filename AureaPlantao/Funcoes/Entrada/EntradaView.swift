@@ -168,10 +168,14 @@ struct TrocaDeSenhaView: View {
                 .superficie(.flutuante, raio: 28)
 
                 #if DEBUG
-                Button("Pular — só na demonstração") { sessao.pularTrocaDeSenhaNaDemonstracao() }
-                    .font(Tipo.apoioForte)
-                    .foregroundStyle(Cor.textoSuave)
-                    .frame(maxWidth: .infinity, minHeight: 44)
+                Button { sessao.pularTrocaDeSenhaNaDemonstracao() } label: {
+                    // O frame no RÓTULO, não no botão: só assim a área de toque vira 44 pt.
+                    Text("Pular — só na demonstração")
+                        .font(Tipo.apoioForte)
+                        .foregroundStyle(Cor.textoSuave)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .contentShape(.rect)
+                }
                 #endif
             }
             .padding(Espaco.margem)

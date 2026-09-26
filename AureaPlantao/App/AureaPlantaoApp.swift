@@ -61,76 +61,58 @@ private struct CapaDePrivacidade: View {
 
 // MARK: - Abas
 
-/// Três abas, não cinco ícones genéricos. O web levou cinco destinos para o polegar
-/// (Plantão · Cadeiras · Condutas · Sintomas · Operação); aqui ficam os três que cabem no
-/// bolso de quem está no corredor. Cadeiras e indicadores são do computador da sala.
+/// A casca do app autenticado. As abas saem das PERMISSÕES de quem entrou (`Acesso`):
+/// a enfermeira de plantão vê Plantão · Contatos · Pacientes · Mais; o médico, que só lê
+/// histórico, não vê Contatos nem Cadeiras; o administrador vê a área dele.
 struct AbasView: View {
-    enum Aba: Hashable, CaseIterable {
-        case plantao, contatos, pacientes
-
-        var nome: String {
-            switch self {
-            case .plantao: "Plantão"
-            case .contatos: "Contatos"
-            case .pacientes: "Pacientes"
-            }
-        }
-
-        var icone: String {
-            switch self {
-            case .plantao: "waveform.path.ecg"
-            case .contatos: "phone.arrow.down.left"
-            case .pacientes: "person.2"
-            }
-        }
-
-        var iconeAtivo: String {
-            switch self {
-            case .plantao: "waveform.path.ecg"
-            case .contatos: "phone.arrow.down.left.fill"
-            case .pacientes: "person.2.fill"
-            }
-        }
-
-        /// O tom da aurora de cada aba. Marca e paleta de dado (ADR-005) — nunca faixa clínica.
-        var tom: Color {
-            switch self {
-            case .plantao: Cor.auroraCeu
-            case .contatos: Cor.auroraAco
-            case .pacientes: Cor.auroraIndigo
-            }
-        }
-    }
-
-    @State private var aba: Aba = .plantao
+    @Environment(Sessao.self) private var sessao
+    @State private var aba: Destino = .plantao
     @State private var plantao = PlantaoStore()
     @State private var contatos = ContatosStore()
     @State private var mostrandoConta = false
     @Environment(\.scenePhase) private var fase
 
+    private var acesso: Acesso {
+        Acesso(perfil: sessao.eu?.perfil ?? "PROFISSIONAL", permissoes: sessao.eu?.permissoes ?? [])
+    }
+
+    private var ehPainel: Bool { !acesso.ehAdministrador }
+    private var atendePlantao: Bool { acesso.tem("ATENDER_PLANTAO") }
+
     var body: some View {
+        let abas = acesso.abas
+
         ZStack(alignment: .bottom) {
             FundoVivo(tom: aba.tom)
                 .animation(.easeInOut(duration: 0.8), value: aba)
 
-            // As três telas ficam vivas: trocar de aba não recarrega nem perde a rolagem.
+            // As telas ficam vivas: trocar de aba não recarrega nem perde a rolagem.
             ZStack {
-                PlantaoView(store: plantao, mostrandoConta: $mostrandoConta).visivel(aba == .plantao)
-                ContatosView(store: contatos).visivel(aba == .contatos)
-                PacientesView().visivel(aba == .pacientes)
+                ForEach(abas) { destino in
+                    tela(destino).visivel(aba == destino)
+                }
             }
 
             VStack(spacing: 8) {
-                FaixaAoVivo(atualizadoEm: plantao.atualizadoEm, aguardando: contatos.aguardando) {
-                    Tato.selecao()
-                    withAnimation(Movimento.interface) { aba = .contatos }
+                if ehPainel, abas.contains(.plantao) {
+                    FaixaAoVivo(atualizadoEm: plantao.atualizadoEm, aguardando: atendePlantao ? contatos.aguardando : 0) {
+                        guard abas.contains(.contatos) else { return }
+                        Tato.selecao()
+                        withAnimation(Movimento.interface) { aba = .contatos }
+                    }
                 }
-                BarraDeAbas(aba: $aba, aguardando: contatos.aguardando)
+                BarraDeAbas(abas: abas, aba: $aba, aguardando: atendePlantao ? contatos.aguardando : 0)
             }
             .padding(.horizontal, Espaco.margem)
             .padding(.bottom, 4)
         }
         .ignoresSafeArea(.keyboard)
+        .onAppear {
+            if !abas.contains(aba), let primeira = abas.first { aba = primeira }
+        }
+        .onChange(of: acesso) { _, novo in
+            if !novo.abas.contains(aba), let primeira = novo.abas.first { aba = primeira }
+        }
         .sheet(isPresented: $mostrandoConta) {
             ContaView()
                 .presentationDetents([.medium, .large])
@@ -138,17 +120,49 @@ struct AbasView: View {
                 .presentationBackground(.regularMaterial)
         }
         // "Ao vivo" tem que ser verdade: com o app na frente, a fila e os pedidos se
-        // atualizam a cada minuto. No fundo, nada roda — e a tranca cobre a tela.
+        // atualizam a cada minuto. No fundo, nada roda.
         .task(id: fase) {
-            guard fase == .active else { return }
+            guard fase == .active, ehPainel else { return }
             while !Task.isCancelled {
-                async let a: Void = plantao.carregar()
-                async let b: Void = contatos.carregar()
-                _ = await (a, b)
+                if atendePlantao {
+                    async let a: Void = plantao.carregar()
+                    async let b: Void = contatos.carregar()
+                    _ = await (a, b)
+                } else {
+                    await plantao.carregar()
+                }
                 try? await Task.sleep(for: .seconds(60))
             }
         }
+        .environment(\.abrirConta, AcaoDeAbrirConta(acao: { mostrandoConta = true }))
     }
+
+    @ViewBuilder
+    private func tela(_ destino: Destino) -> some View {
+        switch destino {
+        case .plantao: PlantaoView(store: plantao, mostrandoConta: $mostrandoConta)
+        case .contatos: ContatosView(store: contatos)
+        case .pacientes: PacientesView()
+        case .inicioAdmin: InicioAdminView()
+        case .limiares: LimiaresView()
+        case .cadastros: CadastrosView()
+        case .mais: MaisView(destinos: acesso.secundarios)
+        default: EmConstrucao(destino: destino)
+        }
+    }
+}
+
+/// Abre a folha da conta de qualquer tela (avatar no cabeçalho).
+/// Embrulhada num tipo comparável: closure crua no Environment invalida quem depende dela
+/// a cada atualização da casca.
+struct AcaoDeAbrirConta: Equatable {
+    fileprivate let acao: () -> Void
+    func callAsFunction() { acao() }
+    static func == (_: Self, _: Self) -> Bool { true }
+}
+
+extension EnvironmentValues {
+    @Entry var abrirConta = AcaoDeAbrirConta(acao: {})
 }
 
 private extension View {
@@ -222,14 +236,15 @@ private struct FaixaAoVivo: View {
 /// geometry) e o rótulo só aparece na ativa — as outras ficam como ícone.
 /// Custom e não `TabView`: a nativa é opaca e mata o fundo vivo, e não anima a seleção.
 private struct BarraDeAbas: View {
-    @Binding var aba: AbasView.Aba
+    let abas: [Destino]
+    @Binding var aba: Destino
     let aguardando: Int
     @Namespace private var indicador
     @Environment(\.accessibilityReduceMotion) private var reduzirMovimento
 
     var body: some View {
         HStack(spacing: 4) {
-            ForEach(AbasView.Aba.allCases, id: \.self) { item in
+            ForEach(abas) { item in
                 let ativo = aba == item
                 Button {
                     guard !ativo else { return }

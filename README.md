@@ -16,6 +16,18 @@ cd ../aurea && pnpm dev     # API em :3333
 Conta de demonstração: `enfermagem@aurea.local` / `aurea-demo-2026`. A troca de senha do
 primeiro acesso tem um "Pular" que só existe em DEBUG — a senha de demo é compartilhada.
 
+## Projeto Xcode: gerado, não versionado
+`AureaPlantao.xcodeproj` sai do `project.yml` (`xcodegen generate`, que o `./run.sh` já
+roda) e **não entra no git**. Motivo: o `.pbxproj` é um arquivo gerado de milhares de linhas
+que muda a cada arquivo novo — versioná-lo é a origem clássica de conflito de merge quando
+mais de uma pessoa (ou agente) trabalha em paralelo. O custo é rodar `xcodegen` antes de
+abrir no Xcode; o `run.sh` faz isso.
+
+## Acesso por permissão
+O app não pergunta a profissão, pergunta a permissão (`App/Destinos.swift`). Cada destino
+espelha o `exigirPermissao` da rota na API. Médico, enfermeira, farmacêutico: o que cada um
+vê sai das permissões concedidas na conta — função nova não exige mudança no app.
+
 ## Onde está cada coisa
 | Pasta | O quê |
 |---|---|

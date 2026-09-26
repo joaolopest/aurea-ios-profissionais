@@ -217,6 +217,10 @@ struct CampoDeEntrada: View {
     var seguro = false
     var teclado: UIKeyboardType = .default
     var conteudo: UITextContentType?
+    /// Maiúscula automática: `.never` para e-mail e senha; `.words` para nome; `.sentences` para texto.
+    var maiusculas: TextInputAutocapitalization = .never
+    /// Corretor ortográfico: desligado por padrão (e-mail, CPF, código); ligar em texto livre.
+    var corrigir = false
     var botaoDoTeclado: SubmitLabel = .next
     var aoEnviar: (() -> Void)?
 
@@ -231,8 +235,8 @@ struct CampoDeEntrada: View {
                 } else {
                     TextField("", text: $texto)
                         .keyboardType(teclado)
-                        .textInputAutocapitalization(.never)
-                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(maiusculas)
+                        .autocorrectionDisabled(!corrigir)
                 }
             }
             .textContentType(conteudo)
