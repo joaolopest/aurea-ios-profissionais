@@ -30,7 +30,8 @@ targets:
     info:
       path: AureaPlantao/Info.plist
       properties:
-        CFBundleDisplayName: AUREA
+        # "AUREA Plantão" ao lado do "AUREA Paciente": dois apps, mesma família.
+        CFBundleDisplayName: AUREA Plantão
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchScreen:
